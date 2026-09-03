@@ -16,22 +16,29 @@ body {
 
 a {
     color: #99c3ff;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
-nav{
+nav {
     text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     color: #ffffff;
 }
 
-main{
+main {
     padding-left: 4rem;
     padding-top: 1rem;
 }
 
-footer{
+footer {
     text-align: center;
     background: #191a1b;
     position: fixed;
