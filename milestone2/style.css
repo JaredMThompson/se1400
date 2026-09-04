@@ -50,6 +50,10 @@ ul{
     padding-left: 1rem;
 }
 
+h3 a{
+    color: #ffffff;
+    text-decoration: none;
+}
 
 footer {
     text-align: center;
