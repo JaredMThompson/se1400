@@ -7,7 +7,7 @@ header {
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 2.0;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: #353535;
@@ -37,9 +37,19 @@ main {
 }
 
 main p{
-    text-indent: 4ch;
+    text-indent: 2ch;
     color: #ffffff;
+    margin-bottom: 2rem;
 }
+
+article{
+    padding-left: 4ch;
+}
+
+ul{
+    padding-left: 1rem;
+}
+
 
 footer {
     text-align: center;
