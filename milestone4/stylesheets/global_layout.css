@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 0;
+}
+
 .class_layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) repeat(6, minmax(0, 175px)) minmax(0, 1fr)
