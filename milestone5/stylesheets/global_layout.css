@@ -15,19 +15,21 @@ body{
 
 .grid-layout {
     display: grid;
-    grid-template-columns: 70px minmax(0, 1fr) 70vw minmax(0, 1fr);
+    grid-template-columns: 4.5rem 1fr;
     min-height: 100vh;
-    grid-template-rows: 6rem 1fr min-content;
+    grid-template-rows: minmax(6rem, max-content) minmax(min-content, 1fr) min-content;
     background: url(../media/BackgroundTile.webp) top left / 4rem repeat scroll;
     background-color: var(--color-bg);
 
     & header{
-        grid-column: 3 / 4;
+        grid-column: 2 / -1;
         grid-row: 1 / 2;
         display: flex;
         flex-direction: row;
         justify-content: center;
         gap: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         & img{
             height: 3rem;
@@ -50,15 +52,22 @@ body{
     }
 
     & nav{
-        grid-column:  1 / -1;
         grid-row: 2 / 3;
-        
+
+        & ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        & li{
+            margin-top: 1rem;
+            text-align: center;
+        }
     }
 
     & main{
-        grid-column: 3 / 4;
+        grid-column: 2 / -1;
         grid-row: 2 / 3;
-        background-color: rgba(127, 0, 255, 0.1);
     }
 
     & footer{
