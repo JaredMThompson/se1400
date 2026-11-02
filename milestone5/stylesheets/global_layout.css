@@ -16,7 +16,7 @@ body{
 .grid-layout {
     display: grid;
     grid-template-columns: 70px minmax(0, 1fr) 70vw minmax(0, 1fr);
-    background: url(../media/BackgroundTile.webp) top left / 3.25rem 3.25rem repeat scroll;
+    background: url(../media/BackgroundTile.webp) top left / 4rem repeat scroll;
     background-color: var(--color-bg);
 
     & header{
