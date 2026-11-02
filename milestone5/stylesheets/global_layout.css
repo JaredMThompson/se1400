@@ -10,7 +10,7 @@
 
 body{
     margin: 0;
-    
+    color: #FFFFFF;
 }
 
 .grid-layout {
@@ -24,7 +24,20 @@ body{
     & header{
         grid-column: 3 / 4;
         grid-row: 1 / 2;
-        background-color: rgba(255, 0, 0, 0.25);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+
+        & img{
+            height: 3rem;
+            width: 3rem;
+            align-self: center;
+        }
+
+        & h1{
+            align-self: center;
+        }
     }
 
     & .sidebar{
@@ -39,21 +52,22 @@ body{
     & nav{
         grid-column:  1 / -1;
         grid-row: 2 / 3;
-        grid-template-columns: subgrid;
-        grid-template-rows: subgrid;
+        
     }
 
     & main{
         grid-column: 3 / 4;
         grid-row: 2 / 3;
-        background-color: rgba(127, 0, 255, 0.25);
+        background-color: rgba(127, 0, 255, 0.1);
     }
 
     & footer{
         grid-column: 1 / -1;
         grid-row: 3 / 4;
         background-color: var(--color-footer);
-        height: 150px;
+        padding: 1rem;
+        justify-content: center;
+        align-content: center;
     }
 }
 
