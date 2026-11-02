@@ -1,51 +1,72 @@
+:root{
+    --color-bg: #EEEEEE;
+    --color-nav: #1E1E1E;
+    --color-footer: #323232;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 body{
     margin: 0;
+    
 }
 
-.custom_layout {
+.grid-layout {
     display: grid;
-    grid-template-columns: 70px minmax(0, 1fr) 70vw minmax(0, 1fr)
-}
+    grid-template-columns: 70px minmax(0, 1fr) 70vw minmax(0, 1fr);
+    background: url(../media/BackgroundTile.webp) top left / 3.25rem 3.25rem repeat scroll;
+    background-color: var(--color-bg);
 
-.custom_layout header{
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-    background-color: rgba(255, 0, 0, 0.25);
-    height: 100px;
-}
+    & header{
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        background-color: rgba(255, 0, 0, 0.25);
+        height: 100px;
+    }
 
-.custom_layout .sidebar{
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    background-color: rgba(0, 255, 0, 0.25);
-}
+    & .sidebar{
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        background-color: var(--color-nav);
+    }
 
-.custom_layout nav{
-    grid-column:  1 / 2;
-    grid-row: 2 / 3;
-    background-color: rgba(0, 0, 255, 0.25);
-    height: 600px;
-}
+    & nav{
+        display: grid;
+        grid-column:  1 / -1;
+        grid-row: 2 / 3;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        height: 600px;
+    }
 
-.custom_layout main{
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-    background-color: rgba(127, 0, 255, 0.25);
-    height: 600px;
-}
+    & main{
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+        background-color: rgba(127, 0, 255, 0.25);
+        height: 600px;
+    }
 
-.custom_layout footer{
-    grid-column: 1 / -1;
-    grid-row: 3 / 4;
-    background-color: rgba(255, 255, 0, 0.25);
-    height: 150px;
+    & footer{
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        background-color: var(--color-footer);
+        height: 150px;
+    }
 }
 
 h1{
     max-width: 600px;
     justify-self: center;
+}
+
+@media (prefers-color-scheme: dark){
+    :root{
+        --color-bg: #474747;
+    }
+
 }
