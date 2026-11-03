@@ -2,6 +2,7 @@
     --color-bg: #CCC;
     --color-nav: #323232;
     --color-footer: #464646;
+    --color-text: #000;
 }
 
 *, *::before, *::after {
@@ -10,7 +11,7 @@
 
 body{
     margin: 0;
-    color: #FFFFFF;
+    color: var(--color-text);
     font-family: "Inter", sans-serif;
 }
 
@@ -60,6 +61,7 @@ body{
         display: flex;
         flex-direction: column;
         height: 1200px;
+        
 
         & ul{
             position: sticky;
@@ -74,6 +76,25 @@ body{
         & li{
             margin-top: 1rem;
             text-align: center;
+            display: block;
+
+            
+
+            & a{
+                display: block;
+                text-decoration: none;
+                color: var(--color-text);
+                & img{
+                    width: 75%;
+                    height: auto;
+                }
+                &:is(:visited, :hover, :active, :focus){
+                    color: var(--color-text);
+                }
+                &:hover{
+                    background-color: rgba(0, 0, 0, 0.25);
+                }
+            }
         }
     }
 
@@ -102,6 +123,7 @@ h1{
         --color-bg: #474747;
         --color-nav: #1E1E1E;
         --color-footer: #323232;
+        --color-text: #FFF;
     }
 
 }
