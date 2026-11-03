@@ -30,6 +30,7 @@ body{
         gap: 2rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        text-align: center;
 
         & img{
             height: 3rem;
@@ -55,9 +56,11 @@ body{
         grid-row: 2 / 3;
         display: flex;
         flex-direction: column;
+        height: 1200px;
 
         & ul{
             position: sticky;
+            top: 0;
             list-style: none;
             padding: 0;
         }
