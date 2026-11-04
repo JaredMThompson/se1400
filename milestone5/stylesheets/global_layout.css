@@ -16,6 +16,8 @@ body{
     margin: 0;
     color: var(--color-text);
     font-family: "Inter", sans-serif;
+    background: url(../media/BackgroundTile.webp) top left / 4rem repeat scroll;
+    background-color: var(--color-bg);
 }
 
 a{
@@ -33,8 +35,7 @@ a{
     grid-template-columns: 4.5rem 1fr;
     min-height: 100vh;
     grid-template-rows: minmax(6rem, max-content) minmax(min-content, 1fr) min-content;
-    background: url(../media/BackgroundTile.webp) top left / 4rem repeat scroll;
-    background-color: var(--color-bg);
+    
 
     & header{
         grid-column: 2 / -1;
