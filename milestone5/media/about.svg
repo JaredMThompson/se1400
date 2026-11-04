@@ -9,5 +9,5 @@
     height="72pt"
     viewBox="0 0 72 72">
 <defs/>
-<circle id="shape0" transform="translate(14.4, 14.4)" r="21.6" cx="21.6" cy="21.6" fill="none" stroke="#999999" stroke-width="3.6" stroke-linecap="square" stroke-linejoin="bevel"/><circle id="shape1" transform="matrix(0.142857142857143 0 0 0.142561372375037 32.4 21.6149068322981)" r="25.2" cx="25.2" cy="25.2" fill="#999999" fill-rule="evenodd" stroke="#999999" stroke-width="0.72" stroke-linecap="square" stroke-linejoin="bevel"/><rect id="shape2" transform="matrix(0.799999999999999 0 0 1.2 33.12 33.12)" fill="#999999" fill-rule="evenodd" stroke="#999999" stroke-width="0.72" stroke-linecap="square" stroke-linejoin="bevel" width="7.2" height="14.4"/>
+<circle id="shape0" transform="translate(14.4, 14.4)" r="21.6" cx="21.6" cy="21.6" fill="none" stroke="#8c8c8c" stroke-width="3.6" stroke-linecap="square" stroke-linejoin="bevel"/><circle id="shape1" transform="matrix(0.142857142857143 0 0 0.142561372375037 32.4 21.6149068322981)" r="25.2" cx="25.2" cy="25.2" fill="#8c8c8c" fill-rule="evenodd" stroke="#8c8c8c" stroke-width="0.72" stroke-linecap="square" stroke-linejoin="bevel"/><rect id="shape2" transform="matrix(0.799999999999999 0 0 1.2 33.12 33.12)" fill="#8c8c8c" fill-rule="evenodd" stroke="#8c8c8c" stroke-width="0.72" stroke-linecap="square" stroke-linejoin="bevel" width="7.2" height="14.4"/>
 </svg>

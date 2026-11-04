@@ -2,7 +2,10 @@
     --color-bg: #CCC;
     --color-nav: #323232;
     --color-footer: #464646;
-    --color-text: #000;
+    --color-text: #DDD;
+    --color-content-area-background: #F8FAE3;
+    --color-content-area-border: var(--color-nav);
+    --color-button-text: #CC7A4F;
 }
 
 *, *::before, *::after {
@@ -13,6 +16,16 @@ body{
     margin: 0;
     color: var(--color-text);
     font-family: "Inter", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--color-text);
+    
+    &:is(:visited, :hover, :active, :focus){
+        color: var(--color-text);
+    }
 }
 
 .grid-layout {
@@ -26,25 +39,36 @@ body{
     & header{
         grid-column: 2 / -1;
         grid-row: 1 / 2;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
         padding: 1rem;
-        text-align: center;
-
-        & img{
-            height: 3rem;
-            width: 3rem;
+        justify-items: center;
+        
+        & .header-bubble{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             align-self: center;
-        }
+            gap: 2rem;
+            text-align: center;
+            background-color: var(--color-nav);
+            border-radius: 2rem;
+            width: fit-content;
+            padding-right: 2rem;
+            padding-left: 2rem;
 
-        & h1{
-            align-self: center;
-            font-size: 2rem;
-            font-weight: normal;
-            letter-spacing: 0.1rem;
+            & img{
+                height: 3rem;
+                width: 3rem;
+                align-self: center;
+            }
+
+            & h1{
+                align-self: center;
+                font-size: 2rem;
+                font-weight: normal;
+                letter-spacing: 0.1rem;
+            }  
         }
+        
     }
 
     & .sidebar{
@@ -54,45 +78,39 @@ body{
         grid-column: 1 / 2;
         grid-row: 1 / 3;
         background-color: var(--color-nav);
-    }
 
-    & nav{
-        grid-row: 2 / 3;
-        display: flex;
-        flex-direction: column;
-        height: 1200px;
-        
+        & nav{
+            grid-row: 2 / 3;
+            display: flex;
+            flex-direction: column;
 
-        & ul{
-            position: sticky;
-            top: 0;
-            list-style: none;
-            padding: 0;
-            /* Dealing with edge case where the screen does not have enough room to display all of  the nav so the user does not need to scroll to the bottom of the container to force the nav into veiw */
-            max-height: calc(100vh - 6rem);
-            overflow-y: auto;
-        }
+            & ul{
+                position: sticky;
+                top: 0;
+                list-style: none;
+                padding: 0;
 
-        & li{
-            margin-top: 1rem;
-            text-align: center;
-            display: block;
+                /* Dealing with edge case where the screen does not have enough room to display 
+                all of  the nav so the user does not need to scroll to the bottom of the 
+                container to force the nav into veiw */
+                max-height: calc(100vh - 6rem);
+                overflow-y: auto;
+            }
 
-            
-
-            & a{
+            & li{
+                padding-top: 0.3rem;
+                text-align: center;
                 display: block;
-                text-decoration: none;
-                color: var(--color-text);
-                & img{
-                    width: 75%;
-                    height: auto;
-                }
-                &:is(:visited, :hover, :active, :focus){
-                    color: var(--color-text);
-                }
-                &:hover{
+                &.active{
                     background-color: rgba(0, 0, 0, 0.25);
+                }
+
+                & a{
+                    display: block;
+                    & img{
+                        width: 65%;
+                        height: auto;
+                    }
                 }
             }
         }
@@ -108,15 +126,20 @@ body{
         grid-row: 3 / 4;
         background-color: var(--color-footer);
         padding: 1rem;
-        justify-content: center;
-        align-content: center;
+        justify-items: center;
+        & .footer-info{
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            font-size: 1rem;
+            & .helpful-links ul{
+                list-style: none;
+                padding: 0;
+            }
+        }
     }
 }
 
-h1{
-    max-width: 600px;
-    justify-self: center;
-}
 
 @media (prefers-color-scheme: dark){
     :root{
