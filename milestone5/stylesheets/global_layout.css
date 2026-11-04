@@ -102,6 +102,7 @@ a{
 
             & li{
                 padding-top: 0.3rem;
+                padding-bottom: 8px;
                 text-align: center;
                 display: block;
                 &.active{
@@ -110,12 +111,33 @@ a{
 
                 & a{
                     display: block;
+                    position: relative;
                     & img{
                         width: 65%;
                         height: auto;
                     }
+                    
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        bottom: -4px;
+                        width: 75%;
+                        left: calc(25% / 2);
+                        height: 4px;
+                        border-radius: 2px;
+                        background: var(--color-text);
+                        transform: scaleX(0);
+                        transform-origin: center;
+                        transition: transform 0.5s ease;
+                    }
+
+                    &:hover::after{
+                        transform: scaleX(1);
+                        transform-origin: center;
+                    }
                 }
             }
+
         }
     }
 
@@ -152,4 +174,10 @@ a{
         --color-text: #FFF;
     }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
 }
