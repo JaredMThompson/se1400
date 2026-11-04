@@ -85,12 +85,13 @@ a{
             display: flex;
             flex-direction: column;
             min-height: calc(100vh - 6rem);
-
+            
             & ul{
                 position: sticky;
                 top: 0;
                 list-style: none;
                 padding: 0;
+                margin: 0;
 
                 /* Dealing with edge case where the screen does not have enough room to display 
                 all of  the nav so the user does not need to scroll to the bottom of the 
