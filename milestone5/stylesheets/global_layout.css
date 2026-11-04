@@ -3,9 +3,11 @@
     --color-nav: #323232;
     --color-footer: #464646;
     --color-text: #DDD;
-    --color-content-area-background: #F8FAE3;
+    --color-content-area-bg: #F8FAE3;
     --color-content-area-border: var(--color-nav);
+    --color-content-area-text: var(--color-nav);
     --color-button-text: #CC7A4F;
+    --color-button-bg: var(--color-nav);
 }
 
 *, *::before, *::after {
@@ -40,7 +42,7 @@ a{
     & header{
         grid-column: 2 / -1;
         grid-row: 1 / 2;
-        padding: 1rem;
+        padding: 2rem 1rem;
         justify-items: center;
         
         & .header-bubble{
@@ -144,6 +146,8 @@ a{
     & main{
         grid-column: 2 / -1;
         grid-row: 2 / 3;
+        justify-items: center;
+        padding: 0 1rem 1rem;
     }
 
     & footer{

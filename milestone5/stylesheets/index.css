@@ -1,0 +1,65 @@
+/* 
+Defined in root of global layout:
+:root{
+    --color-bg: #CCC;
+    --color-nav: #323232;
+    --color-footer: #464646;
+    --color-text: #DDD;
+    --color-content-area-bg: #F8FAE3;
+    --color-content-area-border: var(--color-nav);
+    --color-content-area-text: var(--color-nav);
+    --color-button-text: #CC7A4F;
+    --color-button-bg: var(--color-nav);
+}
+*/
+.content{
+    color: var(--color-content-area-text);
+    background-color: var(--color-content-area-bg);
+    border-radius: 2rem;
+    border: 5px solid var(--color-content-area-border);
+    width: 100%;
+    max-width: 44rem;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    text-align: center;
+
+    & .button-layout{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(min-content, 35%));
+        gap: 1rem;
+        justify-content: center;
+        & .button{
+            color: var(--color-button-text);
+            font-weight: bold;
+            background-color: var(--color-button-bg);
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 4px 4px 4px rgba(from var(--color-button-text) r g b / 0.5);
+        }
+        & #solo{
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+        }
+
+        & #multi{
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+        }
+
+        & #custom{
+            grid-column: 1 / 2;
+            grid-row: 3 / 4;
+        }
+
+        & #tutorial{
+            grid-row: 3 / 4;
+            grid-column: 2 / 3;
+        }
+    }
+
+    & p{
+        font-size: 0.75rem;
+    }
+}
