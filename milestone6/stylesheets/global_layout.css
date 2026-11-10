@@ -60,6 +60,7 @@
         display: grid;
         grid-template-columns: 1fr; /* changed */
         min-height: 100vh;
+        min-height: 100dvh;
         grid-template-rows: repeat(2, minmax(min-content, max-content)) minmax(min-content, 1fr) min-content; /* changed */
         
 
@@ -78,8 +79,7 @@
                 text-align: center;
                 background-color: var(--color-nav);
                 width: 100%; /* changed no more padding just width*/
-                border-bottom-width: 2px;
-                border-bottom-color: var(--color-text);
+                border-bottom: 2px solid var(--color-text); /* changed to add seperation to nav*/
 
                 & img{
                     height: 3rem;
@@ -98,36 +98,30 @@
         }
 
         & .sidebar{
-            display: none;
-            grid-template-columns: subgrid;
-            grid-template-rows: subgrid;
             grid-column: 1 / 2;
             grid-row: 2 / 3; /* changed */
-            background-color: var(--color-nav);
+            padding-bottom: 1rem;
 
             & nav{
-                grid-row: 2 / 3;
-                min-height: calc(100vh - 6rem);
+                background-color: var(--color-nav);
                 
                 & ul{
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
                     position: sticky;
                     top: 0;
                     list-style: none;
                     padding: 0;
                     margin: 0;
-
-                    /* Dealing with edge case where the screen does not have enough room to display 
-                    all of  the nav so the user does not need to scroll to the bottom of the 
-                    container to force the nav into veiw */
-                    max-height: calc(100vh - 6rem);
-                    overflow-y: auto;
+                    align-items: flex-end;
+                    justify-content: center;
+                    gap: 2rem;
                 }
 
                 & li{
                     text-align: center;
                     display: block;
+                    width: max-content;
                     &.active{
                         background-color: rgba(0, 0, 0, 0.25);
                     }
@@ -138,8 +132,7 @@
                         display: block;
                         position: relative;
                         & img{
-                            width: 65%;
-                            height: auto;
+                            display: none;
                         }
                         
                         &::after{
@@ -256,17 +249,17 @@
     }
 }
 
-@media (min-width: 1024px){
+@media (orientation: landscape){
     .grid-layout {
         display: grid;
         grid-template-columns: 4.5rem 1fr;
         min-height: 100vh;
+        min-height: 100dvh;
         grid-template-rows: minmax(6rem, max-content) minmax(min-content, 1fr) min-content;
         
 
         & header{
             grid-column: 2 / -1;
-            grid-row: 1 / 2;
             padding: 2rem 1rem;
             justify-items: center;
             
@@ -309,7 +302,6 @@
 
             & nav{
                 grid-row: 2 / 3;
-                min-height: calc(100vh - 6rem);
                 
                 & ul{
                     display: flex;
@@ -323,7 +315,8 @@
                     /* Dealing with edge case where the screen does not have enough room to display 
                     all of  the nav so the user does not need to scroll to the bottom of the 
                     container to force the nav into veiw */
-                    max-height: calc(100vh - 6rem);
+                    max-height: 100vh;
+                    max-height: 100dvh;
                     overflow-y: auto;
                 }
 
@@ -375,69 +368,7 @@
             padding: 0 1rem 1rem;
         }
 
-        & footer{
-            grid-column: 1 / -1;
-            grid-row: 3 / 4;
-            background-color: var(--color-footer);
-            padding: 1rem;
-            justify-items: center;
-            & .footer-info{
-                display: grid;
-                grid-template-columns: minmax(min-content, max-content) minmax(2rem, 8rem) minmax(min-content, max-content);
-                grid-template-rows: repeat(2, minmax(min-content, max-content));
+        & footer{grid-row: 4 / 5;}
 
-                & p{
-                    font-size: 1rem;
-                    margin: 0;
-                }
-
-                & ul{
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                    font-size: 1rem;
-                }
-
-                & .contact{
-                    display: grid;
-                    grid-template-columns: subgrid;
-                    grid-template-rows: subgrid;
-                    grid-column: 1 / 2;
-                    grid-row: 1 / -1;
-
-                    & h2{
-                        grid-row: 1 / 2;
-                    }
-                    
-                    & address{
-                        grid-row: 2 / 3;
-                        font-size: 1rem;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                        gap: 1rem;
-                    }
-                }
-
-                & .helpful-links{
-                    display: grid;
-                    grid-template-columns: subgrid;
-                    grid-template-rows: subgrid;
-                    grid-column: 3 / 4;
-                    grid-row: 1 / -1;
-
-                    & h2{
-                        grid-row: 1 / 2;
-                    }
-
-                    & ul{
-                        grid-row: 2 / 3;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-between;
-                    }
-                }
-            }
-        }
     }
 }
