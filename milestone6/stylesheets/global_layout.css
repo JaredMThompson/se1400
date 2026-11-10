@@ -67,7 +67,6 @@
         & header{
             grid-column: 1 / -1; /* changed */
             grid-row: 1 / 2;
-            padding: 0; /* changed */
             justify-items: center;
             
             & .header-bubble{
@@ -80,6 +79,7 @@
                 background-color: var(--color-nav);
                 width: 100%; /* changed no more padding just width*/
                 border-bottom: 2px solid var(--color-text); /* changed to add seperation to nav*/
+                padding: 0 1rem; /* changed */
 
                 & img{
                     height: 3rem;
@@ -251,43 +251,19 @@
 
 @media (orientation: landscape){
     .grid-layout {
-        display: grid;
         grid-template-columns: 4.5rem 1fr;
-        min-height: 100vh;
-        min-height: 100dvh;
         grid-template-rows: minmax(6rem, max-content) minmax(min-content, 1fr) min-content;
         
 
         & header{
             grid-column: 2 / -1;
             padding: 2rem 1rem;
-            justify-items: center;
             
             & .header-bubble{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-                text-align: center;
-                background-color: var(--color-nav);
                 border-radius: 2rem;
                 width: fit-content;
                 padding-right: 2rem;
-                padding-left: 2rem;
-
-                & img{
-                    height: 3rem;
-                    width: 3rem;
-                    align-self: center;
-                }
-
-                & h1{
-                    align-self: center;
-                    font-size: 2rem;
-                    font-weight: normal;
-                    letter-spacing: 0.1rem;
-                }  
+                padding-left: 2rem; 
             }
             
         }
@@ -296,9 +272,9 @@
             display: grid;
             grid-template-columns: subgrid;
             grid-template-rows: subgrid;
-            grid-column: 1 / 2;
             grid-row: 1 / 3;
             background-color: var(--color-nav);
+            padding: 0;
 
             & nav{
                 grid-row: 2 / 3;
@@ -364,8 +340,6 @@
         & main{
             grid-column: 2 / -1;
             grid-row: 2 / 3;
-            justify-items: center;
-            padding: 0 1rem 1rem;
         }
 
         & footer{grid-row: 4 / 5;}
