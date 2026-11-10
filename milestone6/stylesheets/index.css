@@ -30,16 +30,7 @@ Defined in root of global layout:
             grid-template-columns: repeat(2, minmax(min-content, 35%));
             gap: 1rem;
             justify-content: center;
-            & .button{
-                color: var(--color-button-text);
-                font-weight: bold;
-                background-color: var(--color-button-bg);
-                padding-top: 0.75rem;
-                padding-bottom: 0.75rem;
-                border-radius: 0.5rem;
-                text-align: center;
-                box-shadow: 4px 4px 4px rgba(from var(--color-button-text) r g b / 0.5);
-            }
+            
             & #solo{
                 grid-column: 1 / -1;
                 grid-row: 1 / 2;

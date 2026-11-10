@@ -35,6 +35,24 @@
             color: var(--color-text);
         }
     }
+    .button{
+        color: var(--color-button-text);
+        font-weight: bold;
+        background-color: var(--color-button-bg);
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        box-shadow: 4px 4px 4px rgba(from var(--color-button-text) r g b / 0.5);
+
+        &:hover{
+            box-shadow: 4px 4px 4px rgba(from var(--color-button-text) r g b / 0.9); 
+        }
+
+        &:is(:visited, :hover, :active, :focus){
+            color: var(--color-button-text);
+        }
+    }
 }
 
 @layer layout{
