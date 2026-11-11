@@ -325,7 +325,7 @@
                     position: sticky;
                     top: 0;
                     align-items: normal;
-                    justify-content: center;
+                    justify-content: flex-start;
 
                     /* Dealing with edge case where the screen does not have enough room to display 
                     all of  the nav so the user does not need to scroll to the bottom of the 
