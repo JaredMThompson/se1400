@@ -36,6 +36,13 @@
             color: var(--color-text);
         }
     }
+
+    li.active{
+        & a{
+            color: var(--color-button-text);
+        }
+    }
+    
     .button{
         color: var(--color-button-text);
         font-weight: bold;
@@ -122,6 +129,7 @@
         }
             
         & nav {
+            grid-column: 1 / 2;
             grid-row: 3 / 4;
             display: none;
             background-color: var(--color-nav);
@@ -136,17 +144,10 @@
                 margin: 0;
                 align-items: center;
                 width: 100%;
-                max-width: var(--content-width);
             }
 
             & li{
                 text-align: center;
-
-                &.active{
-                    & a{
-                        color: var(--color-button-text);
-                    }
-                }
 
                 & a{
                     white-space: nowrap;
@@ -259,70 +260,34 @@
     }
 
     @media (orientation: portrait) and (min-width: 35rem){
-        .menu-toggle{
-            display: none;
-        }
-
-        nav{
-            background-color: var(--color-nav);
-            grid-column: 1 / 2;
-            grid-row: 2 / 3; /* changed */
-            margin-bottom: 1rem;
-            justify-items: center;
+        .grid-layout {
+            grid-template-rows: repeat(2, minmax(min-content, max-content)) minmax(min-content, 1fr) min-content;
             
-            & ul{
-                display: flex;
-                flex-direction: row;
-                position: sticky;
-                top: 0;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                align-items: flex-end;
-                justify-content: space-around;
-                width: 100%;
-                max-width: var(--content-width);
-            }
+            & .menu-toggle{display: none;}
 
-            & li{
-                text-align: center;
+            & nav{
                 display: block;
-                &.active{
-                    background-color: rgba(0, 0, 0, 0.25);
+                grid-row: 2 / 3; /* changed */
+                margin-bottom: 1rem;
+                justify-items: center;
+                
+                & ul{
+                    flex-direction: row;
+                    position: sticky;
+                    top: 0;
+                    align-items: flex-end;
+                    justify-content: space-around;
+                    max-width: var(--content-width);
+                    padding: 0 1rem;
                 }
 
-                & a{
-                    white-space: nowrap;
-                    padding: 0.75rem;
-                    display: block;
-                    position: relative;
-                    & img{
-                        display: none;
-                        width: 65%;
-                        height: auto;
-                    }
-                    
-                    &::after{
-                        content: "";
-                        position: absolute;
-                        bottom: 6px;
-                        width: 75%;
-                        left: calc(25% / 2);
-                        height: 4px;
-                        border-radius: 2px;
-                        background: var(--color-text);
-                        transform: scaleX(0);
-                        transform-origin: center;
-                        transition: transform 0.5s ease;
-                    }
-
-                    &:hover::after{
-                        transform: scaleX(1);
-                        transform-origin: center;
-                    }
-                }
+                & li.active{background-color: rgba(0, 0, 0, 0.25);}
             }
 
+            & main{
+                grid-row: 3 / 4;
+                margin: 0;
+            }
         }
     }
 
@@ -331,6 +296,7 @@
             grid-template-columns: 4.5rem 1fr;
             grid-template-rows: minmax(6rem, max-content) minmax(min-content, 1fr) min-content;
             
+            & .menu-toggle{display: none;}
 
             & header{
                 grid-column: 2 / -1;
@@ -351,11 +317,13 @@
                 grid-template-rows: subgrid;
                 grid-row: 1 / 3;
                 margin: 0;
+                position: static;
                 
                 & ul{
                     grid-row: 2 / 3;
                     flex-direction: column;
                     position: sticky;
+                    top: 0;
                     align-items: normal;
                     justify-content: center;
 
@@ -376,6 +344,8 @@
                         }
 
                     }
+
+                    &.active{background-color: rgba(0, 0, 0, 0.25);}
                 }
 
             }
@@ -383,6 +353,7 @@
             & main{
                 grid-column: 2 / -1;
                 grid-row: 2 / 3;
+                margin: 0;
             }
 
             & footer{grid-row: 4 / 5;}
