@@ -240,7 +240,7 @@
 
             & header{
                 grid-column: 2 / -1;
-                padding: 2rem 1rem;
+                padding: 1rem 1rem;
                 
                 & .header-bubble{
                     border-radius: 2rem;
