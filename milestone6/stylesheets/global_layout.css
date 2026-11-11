@@ -109,7 +109,7 @@
                 position: sticky;
                 top: 0;
                 list-style: none;
-                padding: 0;
+                padding: 0 1rem;
                 margin: 0;
                 align-items: flex-end;
                 justify-content: space-around;
@@ -260,6 +260,7 @@
                     position: sticky;
                     align-items: normal;
                     justify-content: center;
+                    padding: 0;
 
                     /* Dealing with edge case where the screen does not have enough room to display 
                     all of  the nav so the user does not need to scroll to the bottom of the 
