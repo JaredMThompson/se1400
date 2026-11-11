@@ -10,8 +10,12 @@ Defined in root of global layout:
     --color-content-area-text: var(--color-nav);
     --color-button-text: #CC7A4F;
     --color-button-bg: var(--color-nav);
+    --content-width: 100%;
 }
 */
+:root{
+    --content-width: 44rem;
+}
 
 @layer page{
     .content{
@@ -20,7 +24,7 @@ Defined in root of global layout:
         border-radius: 2rem;
         border: 5px solid var(--color-content-area-border);
         width: 100%;
-        max-width: 44rem;
+        max-width: var(--content-width);
         padding: 1rem 1rem 2rem;
         text-align: center;
 

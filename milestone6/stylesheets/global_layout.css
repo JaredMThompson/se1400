@@ -11,6 +11,7 @@
     --color-content-area-text: var(--color-nav);
     --color-button-text: #CC7A4F;
     --color-button-bg: var(--color-nav);
+    --content-width: 100%;
 }
 
 @layer base{
@@ -102,6 +103,7 @@
             grid-column: 1 / 2;
             grid-row: 2 / 3; /* changed */
             margin-bottom: 1rem;
+            justify-items: center;
             
             & ul{
                 display: flex;
@@ -109,10 +111,12 @@
                 position: sticky;
                 top: 0;
                 list-style: none;
-                padding: 0 1rem;
+                padding: 0;
                 margin: 0;
                 align-items: flex-end;
                 justify-content: space-around;
+                width: 100%; /* dont exactly understand why this makes it work i think this makes it take up as much space as it has available instead of the minimum */
+                max-width: var(--content-width);
             }
 
             & li{
@@ -260,7 +264,6 @@
                     position: sticky;
                     align-items: normal;
                     justify-content: center;
-                    padding: 0;
 
                     /* Dealing with edge case where the screen does not have enough room to display 
                     all of  the nav so the user does not need to scroll to the bottom of the 
