@@ -62,7 +62,7 @@
         grid-template-columns: 1fr; /* changed */
         min-height: 100vh;
         min-height: 100dvh;
-        grid-template-rows: repeat(2, minmax(min-content, max-content)) minmax(min-content, 1fr) min-content; /* changed */
+        grid-template-rows: repeat(3, minmax(min-content, max-content)) minmax(min-content, 1fr) min-content; /* changed */
         
 
         & header{
@@ -101,7 +101,6 @@
         & .menu-toggle{
             grid-row: 2 / 3;
             height: 2.5rem;
-            margin-bottom: 1rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -111,9 +110,10 @@
             border: none;
             cursor: pointer;
             width: 100%;
+            position: sticky;
+            top: 0;
 
             & span {
-                display: block;
                 width: 1.5rem;
                 height: 0.125rem;
                 background-color: var(--color-text);
@@ -122,35 +122,30 @@
         }
             
         & nav {
-            grid-row: 2 / 3;
+            grid-row: 3 / 4;
             display: none;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
             background-color: var(--color-nav);
-            color: var(--color-text);
             position: sticky;
-            top: 0;
+            top: 2.5rem;
 
             & ul{
                 display: flex;
                 flex-direction: column;
-                position: sticky;
-                top: 0;
                 list-style: none;
                 padding: 0;
                 margin: 0;
-                align-items: flex-end;
-                justify-content: space-around;
+                align-items: center;
                 width: 100%;
                 max-width: var(--content-width);
             }
 
             & li{
                 text-align: center;
-                display: block;
+
                 &.active{
-                    background-color: rgba(0, 0, 0, 0.25);
+                    & a{
+                        color: var(--color-button-text);
+                    }
                 }
 
                 & a{
@@ -180,26 +175,26 @@
 
                     &:hover::after{
                         transform: scaleX(1);
-                        transform-origin: center;
                     }
                 }
             }
 
             &.nav-open {
-                display: flex;
+                display: block;
             }
         }
 
         & main{
             grid-column: 1 / -1; /* changed */
-            grid-row: 3 / 4; /* changed */
+            grid-row: 4 / 5; /* changed */
             justify-items: center;
             padding: 0 1rem 1rem;
+            margin-top: 1rem;
         }
 
         & footer{
             grid-column: 1 / -1;
-            grid-row: 4 / 5; /* changed */
+            grid-row: 5 / 6; /* changed */
             background-color: var(--color-footer);
             padding: 1rem;
             justify-items: center;
@@ -264,6 +259,10 @@
     }
 
     @media (orientation: portrait) and (min-width: 35rem){
+        .menu-toggle{
+            display: none;
+        }
+
         nav{
             background-color: var(--color-nav);
             grid-column: 1 / 2;
