@@ -22,6 +22,22 @@
             </a>
         </header>
 
+        <button 
+            class="menu-toggle" 
+            aria-expanded="false" 
+            aria-controls="main-nav" 
+            aria-label="Toggle navigation"
+            onclick="
+                const nav = document.querySelector('nav');
+                nav.classList.toggle('nav-open');
+                this.setAttribute('aria-expanded', nav.classList.contains('nav-open'));
+            "
+        > <!-- doing this here rather than linking a js because it will be used in every page but i currently dont see any other js being used on every page at the moment -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <nav>
             <ul>
                 <li class="active">
